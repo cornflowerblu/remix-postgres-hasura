@@ -1,5 +1,7 @@
+import type { SecretsManagerClientConfig } from "@aws-sdk/client-secrets-manager";
 import { useMatches } from "@remix-run/react";
 import { useMemo } from "react";
+import invariant from "tiny-invariant";
 
 import type { User } from "~/models/user.server";
 
@@ -68,4 +70,20 @@ export function useUser(): User {
 
 export function validateEmail(email: unknown): email is string {
   return typeof email === "string" && email.length > 3 && email.includes("@");
+}
+
+export function getAWSSecretsConfig(): SecretsManagerClientConfig {
+  
+  invariant(process.env.AWS_ACCESS_KEY, "AWS key must be set");
+  invariant(process.env.AWS_SECRET, "AWS secret must be set");
+
+  let config: SecretsManagerClientConfig = {
+      region: 'us-east-1',
+      credentials: {
+          accessKeyId: process.env.AWS_ACCESS_KEY,
+          secretAccessKey: process.env.AWS_SECRET,
+      }
+  }
+  
+  return config
 }

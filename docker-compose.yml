@@ -30,4 +30,4 @@ services:
       HASURA_GRAPHQL_ENABLED_LOG_TYPES: startup, http-log, webhook-log, websocket-log, query-log
       ## uncomment next line to set an admin secret
       HASURA_GRAPHQL_ADMIN_SECRET: myadminsecretkey
-      #HASURA_GRAPHQL_JWT_SECRET: '{"jwk_url":"https://clerk.square.sheepdog-78.lcl.dev/.well-known/jwks.json","issuer":"https://clerk.square.sheepdog-78.lcl.dev"}'
+      HASURA_GRAPHQL_JWT_SECRET: '{"type":"RS256","key":"-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAgSvqSANC0TGAKueZii7LmUb79LegDg33C7GxCWNAHPrW46p/Ps6JDfA8Ymd0jqDxCjOYwzw+U63y0KGUB9lyjkNNazCBCxe3yu4uHEj3NRXEdtjgjCTCZ4/92K2F1zLTwXLEcOzMLNiCPbGvR1sg2UL5eEdXaeozcB4kYmzNWSnNkGAf82qHMlwKuH4BsH9ZsDzhVCNG/puMbX/8rQVG7FuGbQ7HNgYk5s8V1/ib+k+FtBfe/1+7sq6lC7aVm6tUJ/mPN5/m3P14Ry/rluh/Qy6vxELIbBzWp3ZXj5OkJboN7Sq7Alv1i17juQh1tqobcPsXMFRDQQRruj/VEtB6yQIDAQAB\n-----END PUBLIC KEY-----"}'
